@@ -8,6 +8,7 @@ import ExpensesFilter from "./expense-tracker/components/ExpensesFilter"
 import ExpenseForm from "./expense-tracker/components/ExpenseForm"
 import categories from "./expense-tracker/categories"
 import TodoList from "./components/todos/components/TodoList"
+import TodoForm from "./components/todos/components/TodoForm"
 
 const App = () => {
 
@@ -75,6 +76,7 @@ const App = () => {
         expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter( expense => expense.id !== id))}
       /> */}
+      <TodoForm />
       <TodoList />
     </div>
   )
