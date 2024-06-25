@@ -4,6 +4,9 @@
 // import Form from "./components/Form"
 import { useState } from "react"
 import ExpenseList from "./expense-tracker/components/ExpenseList"
+import ExpensesFilter from "./expense-tracker/components/ExpensesFilter"
+import ExpenseForm from "./expense-tracker/components/ExpenseForm"
+import categories from "./expense-tracker/categories"
 
 const App = () => {
 
@@ -47,6 +50,8 @@ const App = () => {
   
 // }
 
+  const [selectedCategory, setSelectedCategorie] = useState('')
+  const visibleExpenses = selectedCategory ? expenses.filter( expense => expense.category === selectedCategory) : expenses
   return (
     <div className="max-w-[1070px]">
       {/* <ListGroup 
@@ -59,8 +64,14 @@ const App = () => {
       </Alert> */}
       {/* <Button><h1 className="text-slate-200 font-semibold hover:text-slate-100">Click Moi</h1></Button> */}
       {/* <Form /> */}
+      <ExpenseForm 
+        onSubmit={expense => setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])}
+      />
+      <ExpensesFilter 
+        onSelectCategory={ category => setSelectedCategorie(category)}
+      />
       <ExpenseList 
-        expenses={expenses}
+        expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter( expense => expense.id !== id))}
       />
     </div>
