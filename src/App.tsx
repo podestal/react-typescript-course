@@ -1,8 +1,38 @@
 // import ListGroup from "./components/ListGroup"
 // import Alert from "./components/Alert"
-import Button from "./components/Button"
+// import Button from "./components/Button"
+// import Form from "./components/Form"
+import { useState } from "react"
+import ExpenseList from "./expense-tracker/components/ExpenseList"
 
 const App = () => {
+
+  const [expenses, setExpenses] = useState([
+    {
+      id: 1,
+      description: 'adfadf',
+      amount: 10,
+      category: 'Utilities',
+    },
+    {
+      id: 2,
+      description: 'bbbbbb',
+      amount: 4,
+      category: 'Utilities',
+    },
+    {
+      id: 3,
+      description: 'cccccc',
+      amount: 15,
+      category: 'Utilities',
+    },
+    {
+      id: 4,
+      description: 'ddddddd',
+      amount: 3,
+      category: 'Utilities',
+    },
+  ])
 
 //   const items = [
 //     'New York',
@@ -18,7 +48,7 @@ const App = () => {
 // }
 
   return (
-    <div>
+    <div className="max-w-[1070px]">
       {/* <ListGroup 
         items={items}
         heading="Cities"
@@ -27,7 +57,12 @@ const App = () => {
       {/* <Alert>
         <h1 className="text-xl">Hola Typescript</h1>
       </Alert> */}
-      <Button><h1 className="text-slate-200 font-semibold hover:text-slate-100">Click Moi</h1></Button>
+      {/* <Button><h1 className="text-slate-200 font-semibold hover:text-slate-100">Click Moi</h1></Button> */}
+      {/* <Form /> */}
+      <ExpenseList 
+        expenses={expenses}
+        onDelete={(id) => setExpenses(expenses.filter( expense => expense.id !== id))}
+      />
     </div>
   )
 }
