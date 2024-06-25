@@ -7,6 +7,7 @@ import ExpenseList from "./expense-tracker/components/ExpenseList"
 import ExpensesFilter from "./expense-tracker/components/ExpensesFilter"
 import ExpenseForm from "./expense-tracker/components/ExpenseForm"
 import categories from "./expense-tracker/categories"
+import TodoList from "./components/todos/components/TodoList"
 
 const App = () => {
 
@@ -64,7 +65,7 @@ const App = () => {
       </Alert> */}
       {/* <Button><h1 className="text-slate-200 font-semibold hover:text-slate-100">Click Moi</h1></Button> */}
       {/* <Form /> */}
-      <ExpenseForm 
+      {/* <ExpenseForm 
         onSubmit={expense => setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])}
       />
       <ExpensesFilter 
@@ -73,7 +74,8 @@ const App = () => {
       <ExpenseList 
         expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter( expense => expense.id !== id))}
-      />
+      /> */}
+      <TodoList />
     </div>
   )
 }
