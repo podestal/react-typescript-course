@@ -9,7 +9,9 @@ import ExpenseForm from "./expense-tracker/components/ExpenseForm"
 import categories from "./expense-tracker/categories"
 import TodoList from "./components/todos/components/TodoList"
 import TodoForm from "./components/todos/components/TodoForm"
+import NavBar from "./components/state-management/NavBar"
 import Counter from "./components/state-management/Counter"
+import Login from "./components/auth/Login"
 
 const App = () => {
 
@@ -79,7 +81,9 @@ const App = () => {
       /> */}
       {/* <TodoForm />
       <TodoList /> */}
+      <NavBar />
       <Counter />
+      <Login />
     </div>
   )
 }
